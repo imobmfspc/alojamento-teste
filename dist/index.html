@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/alojamento-favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/alojamento-favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/alojamento-favicon.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/alojamento-favicon.png" />
+    <link rel="apple-touch-icon" href="/alojamento-app.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alojamento Local</title>
+    <meta name="description" content="Descubra o melhor alojamento local para a sua estadia. Quartos confortáveis e acolhedores para uma experiência única." />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Alojamento Local" />
+    <meta name="msapplication-TileImage" content="/alojamento-app.png" />
+    <meta name="msapplication-TileColor" content="#111827" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#111827">
+    <meta property="og:title" content="Alojamento Local">
+    <meta property="og:description" content="Descubra o melhor alojamento local para a sua estadia. Quartos confortáveis e acolhedores para uma experiência única.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/alojamento-app.png">
+    
+    <script type="module" crossorigin src="/assets/main-B7ym5qvu.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-BNYbHuSj.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- GTranslate Configuration -->
+    <script>
+    window.gtranslateSettings = {
+      "default_language": "pt",
+      "native_language_names": true,
+      "languages": ["pt", "es", "fr", "it", "de", "en", "zh-CN", "ja", "ar"],
+      "wrapper_selector": ".gtranslate_wrapper",
+      "custom_css": `
+        #gt_float_wrapper {
+          bottom: 28px !important;
+          left: 28px !important;
+          z-index:5 !important;
+        }
+        
+        .gt_float_switcher img {
+          display: none !important;
+        }
+        .gt_float_switcher {
+          border-radius: .5rem !important;
+          font-family: "Space Grotesk" !important;
+          box-shadow: 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1) !important;
+        }
+        .gt_float_switcher .gt_options a:hover {
+          background: #111828 !important;
+          color: #ffffff !important;
+        .gt_float_switcher .gt_options a {
+          color: #111828 !important;
+        }
+        }
+        .gt_float_switcher .gt-selected .gt-current-lang {
+          color: #111828 !important;
+        }
+      `
+    };
+    </script>
+    
+    <!-- GTranslate Widget -->
+    <div class="gtranslate_wrapper"></div>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+  </body>
+</html>

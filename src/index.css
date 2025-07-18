@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px; /* Default header height */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply text-gray-800 font-sans bg-gray-50;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-gray-900;
+    font-weight: 700;
+  }
+  
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl leading-tight;
+  }
+  
+  h3 {
+    @apply text-2xl sm:text-3xl leading-snug;
+    font-weight: 600;
+  }
+
+  p {
+    font-weight: 400;
+  }
+
+  strong, b {
+    font-weight: 500;
+  }
+
+  /* Add smooth scrolling for anchor links */
+  :target {
+    scroll-margin-top: 96px; /* Default header height */
+  }
+
+  /* Adjust scroll padding for admin pages */
+  .admin-page {
+    scroll-padding-top: 64px;
+  }
+  .admin-page :target {
+    scroll-margin-top: 64px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98];
+    font-weight: 500;
+  }
+  
+  .btn-primary {
+    @apply btn bg-gray-900 text-gray-50 hover:bg-gray-800 shadow-lg shadow-gray-900/10 hover:shadow-gray-900/20;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-gray-100 text-gray-800 hover:bg-gray-200 shadow-lg shadow-gray-200/50 hover:shadow-gray-200/70;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .input {
+    @apply block w-full px-4 py-3 border border-gray-200 rounded-lg shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent placeholder-gray-400 bg-white hover:border-gray-300;
+    font-weight: 400;
+  }
+  
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+    font-weight: 500;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-xl shadow-gray-200/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-200/70 overflow-hidden;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/80 border border-white/20;
+  }
+
+  .section {
+    @apply py-24 sm:py-32;
+  }
+
+  .section-title {
+    @apply text-center max-w-3xl mx-auto mb-16 sm:mb-24;
+  }
+
+  .section-title h2 {
+    @apply mb-6 leading-tight;
+  }
+
+  .section-title p {
+    @apply text-lg sm:text-xl text-gray-600 leading-relaxed;
+  }
+
+  .animate-fade-up {
+    @apply opacity-0 translate-y-8 animate-[fadeUp_0.5s_ease-out_forwards];
+  }
+
+  .animate-fade-in {
+    @apply opacity-0 animate-[fadeIn_0.5s_ease-out_forwards];
+  }
+
+  .animate-scale {
+    @apply scale-95 opacity-0 animate-[scale_0.5s_ease-out_forwards];
+  }
+
+  /* Swiper navigation arrows customization */
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 50% !important;
+    margin-top: 15px !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.3s ease !important;
+    background-image: none !important;
+    color: #1f2937 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    content: '' !important;
+  }
+
+  .swiper-button-disabled {
+    opacity: 0.5 !important;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.6);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.4) transparent;
+}
+
+/* Custom radio button styling */
+.form-radio {
+  @apply appearance-none h-5 w-5 border-2 border-gray-300 rounded-full bg-white cursor-pointer transition-all duration-200 ease-in-out relative;
+  
+  /* Remove default focus outline */
+  outline: none;
+  
+  /* Custom focus ring */
+  &:focus {
+    @apply ring-2 ring-gray-400 ring-offset-2;
+  }
+  
+  /* Hover state */
+  &:hover {
+    @apply border-gray-400 transform scale-105;
+  }
+  
+  /* Active state */
+  &:active {
+    @apply transform scale-95;
+  }
+}
+
+.form-radio:checked {
+  @apply bg-gray-900 border-gray-900;
+  
+  /* Inner circle indicator */
+  &::after {
+    content: '';
+    @apply absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2;
+  }
+  
+  /* Enhanced hover state when checked */
+  &:hover {
+    @apply bg-gray-800 border-gray-800;
+  }
+}
+
+/* Date picker customization */
+.react-datepicker {
+  @apply font-sans border-gray-200 shadow-lg !important;
+}
+
+.react-datepicker__header {
+  @apply bg-gray-50 border-gray-200 !important;
+}
+
+.react-datepicker__current-month {
+  @apply text-gray-900 font-semibold !important;
+}
+
+.react-datepicker__day {
+  @apply hover:bg-gray-100 !important;
+}
+
+.react-datepicker__day--selected {
+  @apply bg-gray-900 text-white hover:bg-gray-800 !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  @apply bg-gray-200 text-gray-900 !important;
+}
+
+.react-datepicker__day--disabled {
+  @apply text-gray-300 hover:bg-transparent !important;
+}
